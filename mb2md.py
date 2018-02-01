@@ -8,8 +8,8 @@ releases.
 
 import argparse
 from datetime import timedelta
-from unicodedata import east_asian_width
 import requests
+from wcwidth import wcswidth
 
 
 MB_ENDPOINT_URL = 'musicbrainz.org/ws/2/'
@@ -52,20 +52,10 @@ def wrangle_track_list(release_dict):
     return tracks
 
 
-def get_width_aware_len(string):
-    """Returns the visual length of a string, i.e. counts double-width
-    characters doubly.
-    """
-    length = 0
-    for character in string:
-        length += 2 if east_asian_width(character) == 'W' else 1
-    return length
-
-
 def get_max_title_len(tracklist):
     """Returns the visual length of the visually longest track in a tracklist.
     """
-    return max([get_width_aware_len(x['title']) for x in tracklist])
+    return max([wcswidth(x['title']) for x in tracklist])
 
 
 def build_table(tracklist):
@@ -84,7 +74,7 @@ def build_table(tracklist):
     for track in tracklist:
         minutes = track['length'].seconds // 60
         seconds = track['length'].seconds % 60
-        padding = max_len - get_width_aware_len(track['title'])
+        padding = max_len - wcswidth(track['title'])
         lines.append(track_fmt.format(track['number'], track['title'],
                                       ' ' * padding, minutes, seconds))
     return lines

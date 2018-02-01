@@ -10,6 +10,7 @@ Dependencies
 
 * Python 3
 * requests
+* wcwidth
 
 
 Usage
