@@ -27,6 +27,22 @@ mb2md generates a markdown table from a MusicBrainz track listing.
 mb2md MBID
 ```
 
+### mi2md
+
+mi2md generates a markdown table with track metadata obtained through the
+`mediainfo` utility.
+
+#### Usage
+
+```
+mi2md FILE [FILE...]
+```
+
+**Example:**
+```
+mi2md somealbum/*.flac
+```
+
 
 License
 -------

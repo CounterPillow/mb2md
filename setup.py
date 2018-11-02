@@ -22,6 +22,7 @@ setuptools.setup(
         'wcwidth'
     ],
     entry_points={
-        'console_scripts': ['mb2md=mkmdtl.mb2md:main'],
+        'console_scripts': ['mb2md=mkmdtl.mb2md:main',
+                            'mi2md=mkmdtl.mi2md:main'],
     }
 )
