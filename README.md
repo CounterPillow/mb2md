@@ -1,8 +1,8 @@
-mb2md
-=====
+mkmdtl
+======
 
-mb2md is a small utility that generates a GitHub-flavoured markdown table of
-the track listing in a MusicBrainz release.
+mkmdtl is a collection of utilities for generating GitHub-flavoured markdown
+tables from track listing data.
 
 
 Dependencies
@@ -13,12 +13,20 @@ Dependencies
 * wcwidth
 
 
-Usage
+Tools
 -----
+
+### mb2md
+
+mb2md generates a markdown table from a MusicBrainz track listing.
+
+#### Usage
+
 
 ```
 mb2md.py MBID
 ```
+
 
 License
 -------
