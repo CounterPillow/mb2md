@@ -24,7 +24,7 @@ mb2md generates a markdown table from a MusicBrainz track listing.
 
 
 ```
-mb2md.py MBID
+mb2md MBID
 ```
 
 
